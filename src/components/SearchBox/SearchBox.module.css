@@ -1,0 +1,15 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 20px;
+  background-color: rgb(199, 235, 255);
+  gap: 8px;
+  border-radius: 5px;
+}
+
+.input {
+  padding: 10px;
+  border: 1px solid #1c56f5;
+  border-radius: 5px;
+}

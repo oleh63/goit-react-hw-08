@@ -3,8 +3,13 @@ import * as Yup from "yup";
 import styles from "./ContactForm.module.css";
 
 const validationSchema = Yup.object({
-  name: Yup.string().min(3).max(50).required("Required"),
-  number: Yup.string().required("Required"),
+  name: Yup.string()
+    .min(3, "мінімальна кількість символів - 3")
+    .max(50, "максимальна кількість символів - 50")
+    .required("поля повинні бути обов'язковими для заповнення"),
+  number: Yup.string().required(
+    "поля повинні бути обов'язковими для заповнення"
+  ),
 });
 
 const ContactForm = ({ onSubmit }) => {
@@ -17,18 +22,30 @@ const ContactForm = ({ onSubmit }) => {
         resetForm();
       }}
     >
-      <Form>
-        <label>
-          Name
-          <Field name="name" />
-          <ErrorMessage name="name" component="div" />
-        </label>
-        <label>
-          Number
-          <Field name="number" />
-          <ErrorMessage name="number" component="div" />
-        </label>
-        <button type="submit">Add contact</button>
+      <Form className={styles.form}>
+        <div className={styles.form_input}>
+          <label className={styles.label_form}>
+            Name
+            <Field className={styles.input_form} name="name" />
+            <ErrorMessage
+              className={styles.error}
+              name="name"
+              component="div"
+            />
+          </label>
+          <label className={styles.label_form}>
+            Number
+            <Field className={styles.input_form} name="number" />
+            <ErrorMessage
+              className={styles.error}
+              name="number"
+              component="div"
+            />
+          </label>
+        </div>
+        <button className={styles.btn_form} type="submit">
+          Add contact
+        </button>
       </Form>
     </Formik>
   );
