@@ -2,29 +2,24 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import styles from "./ContactForm.module.css";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/ContactsOps";
 
 const validationSchema = Yup.object({
   name: Yup.string()
     .min(3, "мінімальна кількість символів - 3")
     .max(50, "максимальна кількість символів - 50")
     .required("поля повинні бути обов'язковими для заповнення"),
-  number: Yup.string().required(
+  number: Yup.number().required(
     "поля повинні бути обов'язковими для заповнення"
   ),
 });
-
-
 const ContactForm = () => {
-
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
-    dispatch(addContact(values.name, values.number))
+    dispatch(addContact(values));
     resetForm();
-  }
-
-
+  };
 
   return (
     <Formik
