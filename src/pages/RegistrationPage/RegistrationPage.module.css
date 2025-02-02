@@ -1,0 +1,17 @@
+.container_register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.form_register {
+  display: flex;
+  flex-direction: column;
+}
+.label_register {
+  text-align: left;
+}
+.input_register {
+  padding: 10px;
+}
