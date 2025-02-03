@@ -1,14 +1,22 @@
 import { Field, Form, Formik } from "formik";
 import styles from "./LoginPage.module.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginThunk } from "../../redux/auth/operations";
 
 const LoginPage = () => {
   const initialValues = {
     email: "",
     password: "",
   };
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (values, options) => {
     console.log(values);
+    dispatch(loginThunk(values))
+      .unwrap()
+      .then(() => navigate("/"));
     options.resetForm();
   };
   return (
@@ -28,6 +36,9 @@ const LoginPage = () => {
             />
           </label>
           <button type="submit">Login</button>
+          <p>
+            You do not have account? <Link to="/register">Registration</Link>
+          </p>
         </Form>
       </Formik>
     </div>

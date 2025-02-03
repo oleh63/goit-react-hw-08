@@ -9,9 +9,6 @@
 .label_login {
   display: flex;
   flex-direction: column;
-}
-
-.label_login span {
   text-align: left;
 }
 
