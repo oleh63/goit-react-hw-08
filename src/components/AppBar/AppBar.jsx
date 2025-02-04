@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
-import styles from "./Header.module.css";
+import styles from "./AppBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoggedIn, selectUser } from "../../redux/auth/selectors";
 import { logoutThunk } from "../../redux/auth/operations";
 
-const Header = () => {
+const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
@@ -26,4 +26,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AppBar;

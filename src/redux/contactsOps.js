@@ -1,10 +1,17 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-
-import { goitApi } from "./auth/operations";
+import { goitApi, setAuthHeader } from "./auth/operations";
 
 export const fetchContacts = createAsyncThunk(
   "contacts/fetchAll",
   async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const token = state.auth.token;
+
+    if (!token) {
+      return thunkAPI.rejectWithValue("No token found");
+    }
+
+    setAuthHeader(token);
     try {
       const { data } = await goitApi.get("/contacts");
       return data;
