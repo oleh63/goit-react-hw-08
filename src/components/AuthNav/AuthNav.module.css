@@ -1,0 +1,14 @@
+.auth_nav {
+  display: flex;
+  gap: 30px;
+}
+.nav_link {
+  background-color: rgb(35, 189, 250);
+  padding: 15px;
+  color: black;
+  border-radius: 10px;
+}
+
+.nav_link:hover {
+  background-color: rgb(226, 221, 231);
+}

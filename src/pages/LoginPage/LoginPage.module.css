@@ -1,17 +1,58 @@
 .form_login {
+  width: 400px;
+  padding: 20px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
+  background-color: rgb(35, 189, 250);
+  border-radius: 10px;
+  box-shadow: 10px 0px 39px 0px rgba(0, 0, 0, 0.54);
 }
 
 .label_login {
   display: flex;
   flex-direction: column;
   text-align: left;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 .input_login {
-  padding: 10px;
+  padding: 12px;
+  background-color: azure;
+  border: none;
+  border-radius: 8px;
+}
+
+.input_login:hover :active {
+  border: none;
+}
+
+.btn_input {
+  color: black;
+  border-radius: 10px;
+}
+
+.btn_input:hover {
+  background-color: rgb(226, 221, 231);
+  border: 1px solid rgb(35, 189, 250);
+  color: black;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.link_input {
+  color: black;
+  text-decoration: underline;
+  padding: 5px;
+}
+
+.link_input:hover {
+  color: aliceblue;
 }

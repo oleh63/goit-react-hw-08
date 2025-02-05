@@ -1,0 +1,23 @@
+.box {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+}
+.span {
+  font-size: 22px;
+  font-weight: 500;
+  color: blue;
+}
+
+.btn {
+  background-color: rgb(35, 189, 250);
+  padding: 15px;
+  color: black;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-color: rgb(221, 231, 231);
+  color: black;
+  border: none;
+}

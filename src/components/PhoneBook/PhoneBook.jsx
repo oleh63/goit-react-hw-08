@@ -5,7 +5,7 @@ import SearchBox from "../SearchBox/SearchBox";
 import { useEffect } from "react";
 import { fetchContacts } from "../../redux/contacts/operations";
 import { selectIsError, selectIsLoading } from "../../redux/contacts/selectors";
-
+import styles from "./PhoneBook.module.css";
 const PhoneBook = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -15,7 +15,7 @@ const PhoneBook = () => {
   const isError = useSelector(selectIsError);
   const isLoading = useSelector(selectIsLoading);
   return (
-    <div>
+    <div className={styles.box}>
       <ContactForm />
       <SearchBox />
       <ContactList />

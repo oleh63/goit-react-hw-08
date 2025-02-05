@@ -32,9 +32,14 @@ const LoginPage = () => {
               type="password"
             />
           </label>
-          <button type="submit">Login</button>
-          <p>
-            You do not have account? <Link to="/register">Registration</Link>
+          <button className={styles.btn_input} type="submit">
+            Login
+          </button>
+          <p className={styles.text}>
+            You do not have account?{" "}
+            <Link className={styles.link_input} to="/register">
+              Registration
+            </Link>
           </p>
         </Form>
       </Formik>

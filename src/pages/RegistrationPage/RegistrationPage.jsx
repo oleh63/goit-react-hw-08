@@ -39,9 +39,14 @@ const RegistrationPage = () => {
               type="password"
             />
           </label>
-          <button type="submit">Login</button>
-          <p>
-            You already have account? <Link to="/login">Login</Link>
+          <button className={styles.btn_input} type="submit">
+            Login
+          </button>
+          <p className={styles.text}>
+            You already have account?{" "}
+            <Link className={styles.link_input} to="/login">
+              Login
+            </Link>
           </p>
         </Form>
       </Formik>
